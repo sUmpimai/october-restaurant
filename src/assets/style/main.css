@@ -1,0 +1,30 @@
+@import './base.css';
+@import './style.scss';
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/Lato/Lato-Regular.ttf');
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/Lato/Lato-Bold.ttf');
+    font-style: bold;
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: 'Playfair';
+    src: url('../fonts/PlayfairDisplay/PlayfairDisplay-Regular.ttf');
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Playfair';
+    src: url('../fonts/PlayfairDisplay/PlayfairDisplay-Bold.ttf');
+    font-style: bold;
+    font-weight: 700;
+}
