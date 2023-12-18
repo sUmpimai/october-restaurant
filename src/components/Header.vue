@@ -8,10 +8,6 @@ const setActive = (index) => {
   return activeIndex.value = index
 }
 
-const showNavMobile = () => {
-    return isShowMobileNav = !isShowMobileNav
-}
-
 const navMenuList = ref([
     {
         id: 0,
@@ -48,35 +44,36 @@ const navMenuList = ref([
 
 <template>
     <header class="border-b border-[rgba(255,255,255,0.1)] h-[60px] bg-transparent fixed top-0 z-40 w-full">
-        <nav class="flex items-center justify-center max-w-7xl mx-auto relative offcanvas-right">
-            <a href="/" class="text-white">
-            restaurant logo
-            </a>
-            <ul 
-             v-show="!isShowMobileNav"
-             class="flex flex-col md:flex-row md:flex-none nav-bar ml-auto space-y-5 md:space-y-0 hidden md:block"
-            >
-                <li
-                    v-for="(nav, index) in navMenuList"
-                    @click="setActive(nav.id)"
+        <div class="max-w-7xl mx-auto relative py-4">
+            <nav class="flex items-center">
+                <a href="/" class="text-white">
+                October Restaurant
+                </a>
+                <ul
+                class="flex nav-bar ml-auto space-y-5 md:space-y-0"
                 >
-                    <a 
-                     href=""
-                     :class="{active: activeIndex === nav.id}"
+                    <li
+                        v-for="(nav, index) in navMenuList"
+                        @click="setActive(nav.id)"
                     >
-                     {{ nav.name }}
-                    </a>
-                </li>
-            </ul>
-            <div class="ml-auto md:hidden">
-                <button 
-                  type="button"
-                  @click="showNavMobile(!isShowMobileNav)"
-                  class="text-white w-8 h-8 flex items-center justify-center hover:text-white">
-                    <svg width="24" height="24" fill="none" aria-hidden="true"><path d="M12 6v.01M12 12v.01M12 18v.01M12 7a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                </button>
-            </div>
-        </nav>
+                        <a 
+                        href=""
+                        :class="{active: activeIndex === nav.id}"
+                        >
+                        {{ nav.name }}
+                        </a>
+                    </li>
+                </ul>
+                <div class="ml-auto md:hidden">
+                    <button 
+                    type="button"
+                    @click="showNavMobile(!isShowMobileNav)"
+                    class="text-white w-8 h-8 flex items-center justify-center hover:text-white">
+                        <svg width="24" height="24" fill="none" aria-hidden="true"><path d="M12 6v.01M12 12v.01M12 18v.01M12 7a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </button>
+                </div>
+            </nav>
+        </div>
     </header>
 </template>
 
